@@ -288,7 +288,10 @@ header.sticky {
 }
 
 .about-image img {
-    border-radius: 20px;
+    background: url(./img/Ellipse\ 2.png);
+    background-repeat: no-repeat;
+    border-radius: 25rem;
+    background-position: left bottom;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
