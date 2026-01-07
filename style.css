@@ -287,15 +287,12 @@ header.sticky {
     flex: 1;
 }
 
-.about-img {
-    background: url(./img/Ellipse\ 2.png);
-    background-repeat: no-repeat;
-}
-
 .about-image img {
     border-radius: 25rem;
     background-position: left bottom;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: url(./img/Ellipse\ 2.png);
+    background-repeat: no-repeat;
 }
 
 .about-text {
