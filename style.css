@@ -287,9 +287,12 @@ header.sticky {
     flex: 1;
 }
 
-.about-image img {
+.about-img {
     background: url(./img/Ellipse\ 2.png);
     background-repeat: no-repeat;
+}
+
+.about-image img {
     border-radius: 25rem;
     background-position: left bottom;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -702,27 +705,28 @@ footer .social-icons a:hover {
     section {
         padding: 80px 0;
     }
-    
+
     .hero {
         padding-top: 150px;
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero h2 {
         font-size: 1.8rem;
     }
-    
+
     .about-content {
         flex-direction: column;
     }
-    
-    .about-image, .about-text {
+
+    .about-image,
+    .about-text {
         flex: 100%;
     }
-    
+
     .about-image {
         margin-bottom: 40px;
     }
@@ -732,7 +736,7 @@ footer .social-icons a:hover {
     .hamburger {
         display: block;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 70px;
@@ -744,33 +748,34 @@ footer .social-icons a:hover {
         padding: 20px 0;
         transition: var(--transition);
     }
-    
+
     .nav-links.active {
         left: 0;
     }
-    
+
     .nav-links li {
         margin: 15px 0;
     }
-    
+
     .hero .container {
         flex-direction: column;
     }
-    
-    .hero-content, .hero-image {
+
+    .hero-content,
+    .hero-image {
         flex: 100%;
         text-align: center;
         padding: 0;
     }
-    
+
     .hero-content {
         margin-bottom: 50px;
     }
-    
+
     .social-icons {
         justify-content: center;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
@@ -782,16 +787,16 @@ footer .social-icons a:hover {
     .section-header h2 {
         font-size: 2rem;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero h2 {
         font-size: 1.5rem;
     }
-    
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
-} 
+}
