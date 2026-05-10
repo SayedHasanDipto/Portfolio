@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand: #D9FF00;
+  --color-dark: #0A0A0A;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .hero-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+  .outline-text {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+  .dark .outline-text {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-brand);
+  }
+}
+
+/* Lenis Smooth Scroll Base Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
