@@ -21,8 +21,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Dymas Alfin | UX Designer Portfolio",
-  description: "UX Designer Portfolio",
+  title: "Sayed Hasan Dipto | MERN Stack Developer Portfolio",
+  description: "MERN Stack Developer Portfolio",
 };
 
 export default function RootLayout({ children }) {

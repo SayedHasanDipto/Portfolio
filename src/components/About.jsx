@@ -77,10 +77,10 @@ export default function About() {
   }, []);
 
   const tools = [
-    { name: "Product Design", desc: "Figma, Adobe XD", year: "2012 — Pres." },
-    { name: "Art Direction", desc: "Branding, Visuals", year: "2014 — 2020" },
-    { name: "Web Design", desc: "Webflow, Framer", year: "2016 — Pres." },
-    { name: "UI/UX Audit", desc: "User Testing", year: "2020 — Pres." },
+    { name: "Frontend Development", desc: "Next.js, React.js, Tailwind CSS", year: "2023 - Present" },
+    { name: "Creative Design", desc: "Figma, UI/UX Design", year: "2023 - Present" },
+    { name: "Backend Development", desc: "MongoDB, Firebase, Node.js, MongoDB", year: "2024 - Present" },
+    { name: "Full-stack Solutions", desc: "Better Auth, API Integration", year: "2024 - Present" },
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function About() {
           <span className="italic block">Pushing</span>
           <span className="italic block">Boundaries</span>
           <span className="not-italic font-sans font-light block">since</span>
-          <span className="not-italic font-sans font-light block">2011</span>
+          <span className="not-italic font-sans font-light block">2023</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
@@ -109,33 +109,20 @@ export default function About() {
             <motion.div
               style={{ y: imageY, scale: 1.1 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-dark rounded-3xl overflow-hidden aspect-[4/3] w-full max-w-[500px] origin-center group relative cursor-pointer"
+              className="bg-dark rounded-3xl overflow-hidden aspect-4/3 w-full max-w-130 origin-center group relative cursor-pointer"
             >
               <img
                 alt="Studio work"
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
-                src="https://i.ibb.co/RG8BLLnN/20250818-071227.jpg"
+                src="https://i.ibb.co/Rkzj9Qmj/20260511-123949.jpg"
               />
               <div className="absolute inset-0 bg-brand/10 opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
             </motion.div>
-
-            <div className="mt-6 flex gap-4 text-gray-400">
-              {["IG", "LN", "BE"].map((social, i) => (
-                <motion.span
-                  key={social}
-                  whileHover={{ y: -3, color: "#D9FF00" }}
-                  className="text-xs cursor-pointer transition-colors"
-                  data-cursor="hover"
-                >
-                  {social}
-                </motion.span>
-              ))}
-            </div>
           </div>
 
           <div>
             <p ref={infoRef} className="text-xl leading-relaxed text-gray-300 mb-8">
-              Based in Jakarta, I am a passionate UX/UI designer with over a decade of experience crafting intuitive interfaces and meaningful digital products for global brands and startups alike.
+              Full-stack developer focused on the React ecosystem. Specialized in building high-performance web applications using Next.js, Tailwind CSS, and MongoDB. Merging clean code with intuitive creative design.
             </p>
 
             <div className="mb-12">
@@ -145,7 +132,7 @@ export default function About() {
                   whileTap={{ scale: 0.95 }}
                   className="bg-brand text-dark text-xs uppercase tracking-widest px-8 py-3 rounded-full hover:bg-brand/90 transition-colors relative overflow-hidden group"
                 >
-                  <span className="relative z-10">Let's talk</span>
+                  <span className="relative z-10">Let&apos;s talk</span>
                 </motion.button>
               </Link>
             </div>

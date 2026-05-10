@@ -52,28 +52,24 @@ export default function Experience() {
 
   const data = [
     {
-      period: "2010 — 2014",
+      period: "2018 – 2023",
       items: [
-        { title: "Bachelor Degree of Design", subtitle: "BINUS University" },
-        { title: "UI/UX Design Certificate", subtitle: "Interaction Design Foundation" },
+        { title: "Computer Expert & Trainer", subtitle: "Bakshibonj Post E Center" },
+        { title: "Secondary School Certificate (SSC)", subtitle: "Humanities" },
       ]
     },
     {
-      period: "2015 — 2021",
+      period: "2023 — 2024",
       items: [
-        { title: "Design Internship", subtitle: "UI/UX Designer at AB" },
-        { title: "Graphic Designer", subtitle: "Freelance for 2 Years" },
-        { title: "Junior Graphic Design", subtitle: "Team Designer at ABC Agency" },
-        { title: "UX Designer", subtitle: "Gojek Indonesia" },
+        { title: "Higher Secondary Certificate (HSC)", subtitle: "UI/UX Designer at AB" },
+        { title: "Junior Web Developer", subtitle: "Upwork & Fiverr" },
       ]
     },
     {
-      period: "2021 — PRESENT",
+      period: "2025 – Present",
       items: [
-        { title: "Product Designer Management", subtitle: "Traveloka Jkt, ID" },
-        { title: "Art Director / Co-Founder", subtitle: "Studiolab" },
-        { title: "Founder", subtitle: "Minimalist UI Project" },
-        { title: "Author of The Book", subtitle: "Standard Design Language Guide" },
+        { title: "Junior MERN stack Developer", subtitle: "Upwork & Fiverr" },
+        { title: "Full-Stack Web Development", subtitle: "Full-Stack Web Development" },
       ]
     }
   ];
@@ -84,10 +80,10 @@ export default function Experience() {
       <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[2px] -z-10 hidden md:block">
         <svg width="2" height="100%" viewBox="0 0 2 1000" fill="none" preserveAspectRatio="none" className="h-full w-full">
           <line x1="1" y1="0" x2="1" y2="1000" stroke="currentColor" className="text-white/10" strokeWidth="2" strokeDasharray="10 10" />
-          <motion.line 
-            x1="1" y1="0" x2="1" y2="1000" 
-            stroke="#D9FF00" 
-            strokeWidth="2" 
+          <motion.line
+            x1="1" y1="0" x2="1" y2="1000"
+            stroke="#D9FF00"
+            strokeWidth="2"
             style={{ pathLength }}
           />
         </svg>
@@ -103,7 +99,7 @@ export default function Experience() {
         <h2 ref={titleRef} className="text-center font-serif text-4xl mb-20 italic text-white">
           Education &amp; Experience
         </h2>
-        
+
         <div ref={colsRef} className="grid md:grid-cols-3 gap-12">
           {data.map((col, index) => (
             <div key={index} className="flex flex-col relative">
@@ -112,7 +108,7 @@ export default function Experience() {
               </span>
               <div className="space-y-8 relative">
                 {col.items.map((item, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     whileHover={{ x: 10 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}

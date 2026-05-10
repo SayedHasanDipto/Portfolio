@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import Link from "next/link";
 import TextScramble from "./TextScramble";
+import { FaDownload } from "react-icons/fa";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -117,13 +118,13 @@ export default function Hero() {
             </h1>
 
             <div className="mt-10 flex flex-wrap gap-6 items-center">
-              <Link href="#contact" data-cursor="hover">
+              <Link href="https://drive.google.com/file/d/1XZYvf3R5avxB4R0akfSLJCLSQ4jtbNIF/view?usp=sharing" target="_blank" data-cursor="hover">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-brand text-dark text-xs uppercase tracking-widest px-8 py-3 rounded-full hover:bg-brand/90 transition-colors relative overflow-hidden group"
                 >
-                  <span className="relative z-10">Let&apos;s talk</span>
+                  <span className="relative z-10 flex gap-2 items-center justify-center"><FaDownload /> Download CV</span>
                 </motion.button>
               </Link>
 
@@ -155,7 +156,7 @@ export default function Hero() {
               <img
                 alt="Sayed Hasan Portrait"
                 className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
-                src="https://i.ibb.co/RTYB9R0w/pfp.jpg"
+                src="https://i.ibb.co/wZVXT6Yd/m1.png"
               />
               <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
             </motion.div>

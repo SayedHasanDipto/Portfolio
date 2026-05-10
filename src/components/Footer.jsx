@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
+import { FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -31,49 +32,41 @@ export default function Footer() {
   const linkGroups = [
     {
       title: "Services",
-      links: ["Audio Design", "Creative Design", "Motion Graphic", "Branding"]
+      links: ["Frontend Development", "Backend Logic (Node/MongoDB)", "UI/UX Design (Figma)", "Web Security & Optimization"]
     },
-    {
-      title: "Portfolio",
-      links: ["Latest Work", "Case Study", "Client Works", "Testimonials"]
-    },
-    {
-      title: "Experience",
-      links: ["Brief Process", "Working Style", "FAQ Hub", "Project Timeline"]
-    }
   ];
 
   return (
     <footer ref={footerRef} className="bg-white dark:bg-dark pt-20 pb-10 px-6 border-t border-gray-100 dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between mb-20 gap-12">
-          
+        <div className="flex flex-col md:flex-row justify-center mb-20 gap-12">
+
           <div className="md:w-1/4">
             <div className="flex items-center gap-2 mb-6 group cursor-pointer" data-cursor="hover">
-              <motion.div 
+              <motion.div
                 whileHover={{ rotate: 180 }}
                 transition={{ duration: 0.5, type: "spring" }}
                 className="w-8 h-8 bg-brand rounded-full flex items-center justify-center font-bold text-xs text-dark"
               >
-                DA
+                SH
               </motion.div>
-              <span className="font-bold tracking-tighter text-xl text-dark dark:text-white">Dymas.</span>
+              <span className="font-bold tracking-tighter text-xl text-dark dark:text-white">Sayed Hasan Dipto</span>
             </div>
             <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-              A freelance designer based in Indonesia, specializing in digital experiences and visual storytelling.
+              A full-stack developer based in Bangladesh, specializing in Next.js and modern web ecosystems.
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:w-3/4">
+
+          <div className="flex gap-20 max-sm:gap-10">
             {linkGroups.map((group, i) => (
               <div key={i}>
                 <h5 className="font-bold text-sm mb-6 uppercase tracking-widest text-dark dark:text-white">{group.title}</h5>
                 <ul className="text-gray-500 dark:text-gray-400 text-sm space-y-3">
                   {group.links.map((link, j) => (
                     <li key={j}>
-                      <motion.a 
+                      <motion.a
                         whileHover={{ x: 5, color: "#D9FF00" }}
-                        className="inline-block transition-colors" 
+                        className="inline-block transition-colors"
                         href="#"
                         data-cursor="hover"
                       >
@@ -84,22 +77,22 @@ export default function Footer() {
                 </ul>
               </div>
             ))}
-            
+
             <div>
-              <h5 className="font-bold text-sm mb-6 uppercase tracking-widest text-dark dark:text-white">Company</h5>
+              <h5 className="font-bold text-sm mb-6 uppercase tracking-widest text-dark dark:text-white">CONNECT</h5>
               <ul className="text-gray-500 dark:text-gray-400 text-sm space-y-4">
                 {[
-                  { icon: "@", text: "dymas_alfin" },
-                  { icon: "✉", text: "contact@dymas.design" },
-                  { icon: "📍", text: "Jakarta, ID" },
+                  { icon: <FaGithub />, text: "sayedhasandipto" },
+                  { icon: <FaEnvelope />, text: "dev.sayedhasan@gmail.com" },
+                  { icon: <FaMapMarkerAlt />, text: "Dhaka, BD" },
                 ].map((item, i) => (
-                  <motion.li 
+                  <motion.li
                     key={i}
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-3 cursor-pointer group"
                     data-cursor="hover"
                   >
-                    <span className="text-gray-400 group-hover:text-brand transition-colors text-lg">{item.icon}</span> 
+                    <span className="text-gray-400 group-hover:text-brand transition-colors text-lg">{item.icon}</span>
                     <span className="group-hover:text-dark dark:group-hover:text-white transition-colors">{item.text}</span>
                   </motion.li>
                 ))}
@@ -107,9 +100,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-100 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-400 dark:text-gray-500">© 2024 Dymas Alfin Design. All rights reserved.</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500">© 2026 Sayed Hasan Dipto. All rights reserved.</p>
           <div className="flex gap-6 text-xs text-gray-400 dark:text-gray-500">
             <motion.a whileHover={{ color: "#D9FF00" }} className="transition-colors" href="#" data-cursor="hover">Terms of Service</motion.a>
             <motion.a whileHover={{ color: "#D9FF00" }} className="transition-colors" href="#" data-cursor="hover">Privacy Policy</motion.a>
