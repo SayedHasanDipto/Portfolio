@@ -1,87 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import gsap from "gsap";
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { projects } from "@/data/projects";
-import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FluidBackground from "@/components/FluidBackground";
+import Preloader from "@/components/Preloader";
 import Image from "next/image";
+import ProjectCard from "@/components/Projects"; // Wait, Projects.jsx exports the section, not the card. 
 
-export default function Projects() {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const cardsRef = useRef(null);
+// I should probably export ProjectCard from Projects.jsx or duplicate it here.
+// Duplicating it for now to ensure I can customize it for the full page view.
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Title mask reveal
-      gsap.fromTo(
-        titleRef.current,
-        { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", y: 50 },
-        {
-          clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-          },
-        }
-      );
-
-      // Cards Stagger
-      gsap.fromTo(
-        cardsRef.current.children,
-        { opacity: 0, y: 100, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 70%",
-          },
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const featuredProjects = projects.slice(0, 3);
-
-
-  return (
-    <section ref={sectionRef} className="py-24 px-6 bg-black/20 transition-colors" id="projects" data-purpose="latest-projects">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-12">
-          <div className="overflow-hidden">
-            <h2 ref={titleRef} className="text-5xl font-bold text-white">Latest Projects</h2>
-          </div>
-          <Link 
-            className="text-sm font-semibold border-b border-white pb-1 hover:text-brand hover:border-brand transition-colors text-white" 
-            href="/projects"
-            data-cursor="hover"
-          >
-            See All →
-          </Link>
-        </div>
-        
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8">
-          {featuredProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProjectCard({ project }) {
+function IndividualProjectCard({ project }) {
   const cardRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -147,15 +80,17 @@ function ProjectCard({ project }) {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-[1.15]" 
               src={project.img}
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </motion.div>
-          {/* Hover Overlay */}
           <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/10 transition-colors duration-500 z-10 pointer-events-none"></div>
         </div>
       </div>
       
       <div style={{ transform: "translateZ(30px)" }}>
+        <span className="text-[10px] font-bold uppercase tracking-widest text-brand mb-2 block">
+          {project.category}
+        </span>
         <h3 className="text-xl font-bold mb-3 group-hover:text-brand transition-colors text-white">
           {project.title}
         </h3>
@@ -169,5 +104,67 @@ function ProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
+  );
+}
+
+export default function ProjectsPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    if (!isLoading) {
+      const ctx = gsap.context(() => {
+        gsap.fromTo(
+          titleRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.2 }
+        );
+
+        gsap.fromTo(
+          ".project-grid-item",
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out", delay: 0.5 }
+        );
+      });
+      return () => ctx.revert();
+    }
+  }, [isLoading]);
+
+  return (
+    <>
+      <FluidBackground />
+      
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      {!isLoading && (
+        <>
+          <Header />
+          <main className="pt-32 pb-24 px-6 min-h-screen">
+            <div className="max-w-7xl mx-auto" ref={containerRef}>
+              <div className="mb-20 overflow-hidden text-center">
+                <p className="text-brand text-xs uppercase tracking-[0.3em] font-bold mb-4">Portfolio</p>
+                <h1 ref={titleRef} className="text-6xl md:text-8xl font-bold text-white uppercase tracking-tighter">
+                  All <span className="italic font-serif text-brand">Projects</span>
+                </h1>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project) => (
+                  <div key={project.id} className="project-grid-item">
+                    <IndividualProjectCard project={project} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </main>
+          <Footer />
+        </>
+      )}
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -111,10 +112,12 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
               className="bg-dark rounded-3xl overflow-hidden aspect-4/3 w-full max-w-130 origin-center group relative cursor-pointer"
             >
-              <img
+              <Image
                 alt="Studio work"
-                className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
+                fill
+                className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
                 src="https://i.ibb.co/Rkzj9Qmj/20260511-123949.jpg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-brand/10 opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
             </motion.div>

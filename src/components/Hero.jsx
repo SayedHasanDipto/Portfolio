@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import Link from "next/link";
 import TextScramble from "./TextScramble";
+import Image from "next/image";
 import { FaDownload } from "react-icons/fa";
 
 export default function Hero() {
@@ -153,10 +154,13 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
               className="relative z-10 rounded-4xl overflow-hidden bg-dark w-full max-w-105 aspect-4/5 shadow-2xl border border-white/5"
             >
-              <img
+              <Image
                 alt="Sayed Hasan Portrait"
-                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
+                fill
+                priority
+                className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
                 src="https://i.ibb.co/wZVXT6Yd/m1.png"
+                sizes="(max-width: 768px) 100vw, 420px"
               />
               <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
             </motion.div>

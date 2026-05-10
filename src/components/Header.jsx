@@ -24,10 +24,10 @@ export default function Header() {
   };
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/#about" },
+    { name: "Projects", href: "/projects" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -38,7 +38,7 @@ export default function Header() {
       className="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5 transition-colors"
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-2 cursor-pointer" data-cursor="hover">
+        <Link href="/" className="flex items-center gap-2 cursor-pointer" data-cursor="hover">
           <motion.div
             whileHover={{ rotate: 90 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -47,7 +47,7 @@ export default function Header() {
             SH
           </motion.div>
           <span className="font-bold tracking-tighter text-xl text-white uppercase">SAYED HASAN DIPTO</span>
-        </div>
+        </Link>
 
         <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-gray-400 relative">
           {navLinks.map((link) => (
