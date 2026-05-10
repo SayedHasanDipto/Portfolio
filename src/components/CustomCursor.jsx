@@ -5,7 +5,7 @@ import { motion, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [cursorMode, setCursorMode] = useState("default"); // default, hover, view
   const [isMobile, setIsMobile] = useState(false);
 
   // Faster springs for better response time
@@ -28,17 +28,20 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e) => {
       const target = e.target;
-      // Check if hovering over a clickable or data-cursor element
-      if (
+      const isProjectCard = target.closest(".project-card");
+      const isClickable = 
         target.tagName.toLowerCase() === "button" ||
         target.tagName.toLowerCase() === "a" ||
         target.closest("button") ||
         target.closest("a") ||
-        target.closest("[data-cursor]")
-      ) {
-        setIsHovering(true);
+        target.closest("[data-cursor]");
+
+      if (isProjectCard) {
+        setCursorMode("view");
+      } else if (isClickable) {
+        setCursorMode("hover");
       } else {
-        setIsHovering(false);
+        setCursorMode("default");
       }
     };
 
@@ -56,21 +59,34 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Trailing Ring */}
+      {/* Trailing Ring / View Mode Circle */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-dark/30 dark:border-brand pointer-events-none z-[100] mix-blend-difference will-change-transform"
+        className="fixed top-0 left-0 rounded-full border border-dark/30 dark:border-brand pointer-events-none z-[100] mix-blend-difference flex items-center justify-center overflow-hidden"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: "-50%",
           translateY: "-50%",
+          width: cursorMode === "view" ? 100 : 32,
+          height: cursorMode === "view" ? 100 : 32,
         }}
         animate={{
-          scale: isHovering ? 2.5 : 1,
-          opacity: isHovering ? 0 : 1,
+          scale: cursorMode === "hover" ? 2.5 : 1,
+          opacity: cursorMode === "hover" ? 0 : 1,
+          backgroundColor: cursorMode === "view" ? "rgba(217, 255, 0, 1)" : "rgba(217, 255, 0, 0)",
         }}
-        transition={{ duration: 0.2 }}
-      />
+        transition={{ type: "spring", stiffness: 200, damping: 30 }}
+      >
+        {cursorMode === "view" && (
+          <motion.span
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-dark font-bold text-[10px] tracking-widest uppercase"
+          >
+            View
+          </motion.span>
+        )}
+      </motion.div>
       
       {/* Inner Dot */}
       <motion.div
@@ -78,8 +94,8 @@ export default function CustomCursor() {
         animate={{
           x: mousePosition.x - 4,
           y: mousePosition.y - 4,
-          scale: isHovering ? 3 : 1,
-          opacity: isHovering ? 0.5 : 1,
+          scale: cursorMode === "hover" ? 3 : cursorMode === "view" ? 0 : 1,
+          opacity: cursorMode === "hover" ? 0.5 : 1,
         }}
         transition={{ 
           type: "spring", 

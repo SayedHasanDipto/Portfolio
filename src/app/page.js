@@ -16,6 +16,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import FluidBackground from "@/components/FluidBackground";
+import PageWrapper from "@/components/PageWrapper";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,7 @@ export default function Home() {
       </AnimatePresence>
 
       {!isLoading && (
-        <>
+        <PageWrapper>
           <Header />
           <main className="pt-20">
             <Hero />
@@ -45,7 +46,7 @@ export default function Home() {
             <Contact />
           </main>
           <Footer />
-        </>
+        </PageWrapper>
       )}
     </>
   );
