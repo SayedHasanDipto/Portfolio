@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: "Sayed Hasan Dipto | Portfolio",
     description: "Creative Full-Stack Developer specialized in the modern web ecosystem.",
-    url: "https://sayedhasandipto.com",
+    url: "https://sayedhasandipto.vercel.app",
     siteName: "Sayed Hasan Dipto Portfolio",
     images: [
       {

@@ -1,7 +1,7 @@
 import { projects } from "@/data/projects";
 
 export default function sitemap() {
-  const baseUrl = "https://sayedhasandipto.com";
+  const baseUrl = "https://sayedhasandipto.vercel.app";
 
   // Base routes
   const routes = ["", "/projects"].map((route) => ({

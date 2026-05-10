@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://sayedhasandipto.com/sitemap.xml",
+    sitemap: "https://sayedhasandipto.vercel.app/sitemap.xml",
   };
 }
