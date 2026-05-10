@@ -111,8 +111,21 @@ export default function Hero() {
             </div>
 
             <h1 className="hero-title font-bold uppercase flex flex-col leading-none overflow-hidden perspective-1000">
-              <span ref={nameRef1} className="block leading-[0.7] pb-1 md:pb-2 text-transparent [-webkit-text-stroke:1px_#bef302] uppercase">
+              <span ref={nameRef1} className="flex items-center gap-4 leading-[0.7] pb-1 md:pb-2 text-transparent [-webkit-text-stroke:1px_#bef302] uppercase">
                 sayed
+                <motion.div
+                  initial={{ scale: 0, rotate: -20 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 1, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-brand relative inline-block align-middle"
+                >
+                  <Image 
+                    src="https://i.ibb.co/wZVXT6Yd/m1.png" 
+                    alt="Sayed" 
+                    fill 
+                    className="object-cover"
+                  />
+                </motion.div>
               </span>
               <span ref={nameRef2} className="block leading-[0.7] pb-1 md:pb-2 text-white">hasan</span>
               <span className="block leading-[0.7] pb-1 md:pb-2 text-white/50 text-2xl md:text-6xl mt-2 md:mt-4">dipto</span>
