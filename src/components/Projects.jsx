@@ -122,20 +122,21 @@ function ProjectCard({ project }) {
   };
 
   return (
-    <motion.div 
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      className="group project-card cursor-pointer relative"
-      data-cursor="hover"
-      whileHover={{ y: -10 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
+    <Link href={`/projects/${project.slug}`}>
+      <motion.div 
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        className="group project-card cursor-pointer relative"
+        data-cursor="hover"
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
       <div 
         style={{ transform: "translateZ(50px)" }}
         className="bg-white/5 border border-white/10 rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden mb-6 hover:border-brand/30"
@@ -169,5 +170,6 @@ function ProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 }

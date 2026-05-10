@@ -97,14 +97,14 @@ export default function About() {
           — About Me —
         </p>
 
-        <h2 ref={headingRef} className="text-4xl md:text-6xl text-center font-serif mb-16 overflow-hidden flex flex-wrap justify-center gap-x-4 text-white">
+        <h2 ref={headingRef} className="text-3xl md:text-6xl text-center font-serif mb-16 overflow-hidden flex flex-wrap justify-center gap-x-4 text-white px-4">
           <span className="italic block">Pushing</span>
           <span className="italic block">Boundaries</span>
           <span className="not-italic font-sans font-light block">since</span>
           <span className="not-italic font-sans font-light block">2023</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
           <div className="relative overflow-hidden rounded-3xl flex justify-center">
             {/* Secondary Image/Portrait with Parallax */}
             <motion.div
@@ -123,12 +123,12 @@ export default function About() {
             </motion.div>
           </div>
 
-          <div>
-            <p ref={infoRef} className="text-xl leading-relaxed text-gray-300 mb-8">
+          <div className="px-2 md:px-0">
+            <p ref={infoRef} className="text-lg md:text-xl leading-relaxed text-gray-300 mb-8">
               Full-stack developer focused on the React ecosystem. Specialized in building high-performance web applications using Next.js, Tailwind CSS, and MongoDB. Merging clean code with intuitive creative design.
             </p>
 
-            <div className="mb-12">
+            <div className="mb-12 flex justify-center md:justify-start">
               <Link href="#contact" data-cursor="hover">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -141,16 +141,19 @@ export default function About() {
             </div>
 
             {/* Tool List */}
-            <div ref={toolListRef} className="space-y-4 border-t border-white/10 pt-8">
+            <div ref={toolListRef} className="space-y-2 border-t border-white/10 pt-8">
               {tools.map((tool, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ x: 10, backgroundColor: "rgba(255,255,255,0.05)" }}
-                  className="flex justify-between items-center group cursor-default p-4 rounded-xl transition-all"
+                  className="flex flex-col sm:flex-row sm:justify-between sm:items-center group cursor-default p-4 rounded-xl transition-all gap-2"
                 >
-                  <span className="font-medium group-hover:text-brand transition-colors text-white">{tool.name}</span>
-                  <span className="text-sm text-gray-400">{tool.desc}</span>
-                  <span className="text-xs text-gray-500">{tool.year}</span>
+                  <div className="flex flex-col">
+                    <span className="font-medium group-hover:text-brand transition-colors text-white">{tool.name}</span>
+                    <span className="text-xs text-gray-400 sm:hidden">{tool.desc}</span>
+                  </div>
+                  <span className="text-sm text-gray-400 hidden sm:block">{tool.desc}</span>
+                  <span className="text-[10px] text-gray-500">{tool.year}</span>
                 </motion.div>
               ))}
             </div>

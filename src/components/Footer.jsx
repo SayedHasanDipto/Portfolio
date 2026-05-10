@@ -39,10 +39,10 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className="bg-white dark:bg-dark pt-20 pb-10 px-6 border-t border-gray-100 dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-center mb-20 gap-12">
+        <div className="flex flex-col md:flex-row justify-between mb-20 gap-12 md:gap-20">
 
-          <div className="md:w-1/4">
-            <div className="flex items-center gap-2 mb-6 group cursor-pointer" data-cursor="hover">
+          <div className="md:w-1/3 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-6 group cursor-pointer" data-cursor="hover">
               <motion.div
                 whileHover={{ rotate: 180 }}
                 transition={{ duration: 0.5, type: "spring" }}
@@ -52,12 +52,12 @@ export default function Footer() {
               </motion.div>
               <span className="font-bold tracking-tighter text-xl text-dark dark:text-white">Sayed Hasan Dipto</span>
             </div>
-            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
               A full-stack developer based in Bangladesh, specializing in Next.js and modern web ecosystems.
             </p>
           </div>
 
-          <div className="flex gap-20 max-sm:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-20 text-center md:text-left">
             {linkGroups.map((group, i) => (
               <div key={i}>
                 <h5 className="font-bold text-sm mb-6 uppercase tracking-widest text-dark dark:text-white">{group.title}</h5>
@@ -89,7 +89,7 @@ export default function Footer() {
                   <motion.li
                     key={i}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 cursor-pointer group"
+                    className="flex items-center justify-center md:justify-start gap-3 cursor-pointer group"
                     data-cursor="hover"
                   >
                     <span className="text-gray-400 group-hover:text-brand transition-colors text-lg">{item.icon}</span>

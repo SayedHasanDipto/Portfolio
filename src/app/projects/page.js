@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import FluidBackground from "@/components/FluidBackground";
 import Preloader from "@/components/Preloader";
 import Image from "next/image";
+import Link from "next/link";
 import ProjectCard from "@/components/Projects"; // Wait, Projects.jsx exports the section, not the card. 
 
 // I should probably export ProjectCard from Projects.jsx or duplicate it here.
@@ -144,11 +145,11 @@ export default function ProjectsPage() {
       {!isLoading && (
         <>
           <Header />
-          <main className="pt-32 pb-24 px-6 min-h-screen">
+          <main className="pt-24 md:pt-32 pb-24 px-4 md:px-6 min-h-screen">
             <div className="max-w-7xl mx-auto" ref={containerRef}>
-              <div className="mb-20 overflow-hidden text-center">
+              <div className="mb-12 md:mb-20 overflow-hidden text-center">
                 <p className="text-brand text-xs uppercase tracking-[0.3em] font-bold mb-4">Portfolio</p>
-                <h1 ref={titleRef} className="text-6xl md:text-8xl font-bold text-white uppercase tracking-tighter">
+                <h1 ref={titleRef} className="text-4xl md:text-8xl font-bold text-white uppercase tracking-tighter">
                   All <span className="italic font-serif text-brand">Projects</span>
                 </h1>
               </div>

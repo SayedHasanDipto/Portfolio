@@ -9,6 +9,9 @@ import About from "@/components/About";
 import Partners from "@/components/Partners";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Stats from "@/components/Stats";
+import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
@@ -33,9 +36,12 @@ export default function Home() {
           <main className="pt-20">
             <Hero />
             <About />
+            <Stats />
             <Partners />
             <Experience />
             <Projects />
+            <Process />
+            <Testimonials />
             <Contact />
           </main>
           <Footer />

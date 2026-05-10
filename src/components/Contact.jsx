@@ -60,7 +60,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="p-6 md:p-12 relative overflow-hidden bg-white dark:bg-dark transition-colors" id="contact">
+    <section ref={sectionRef} className="p-4 md:p-12 relative overflow-hidden bg-white dark:bg-dark transition-colors" id="contact">
       {/* Animated Light Sweep Background */}
       <div className="absolute inset-0 z-0 bg-white dark:bg-dark transition-colors">
          <motion.div 
@@ -78,16 +78,16 @@ export default function Contact() {
 
       <div 
         ref={containerRef}
-        className="max-w-7xl mx-auto bg-dark dark:bg-black rounded-[3rem] p-10 md:p-20 text-white flex flex-col md:flex-row items-center gap-16 relative z-10 shadow-2xl transition-colors"
+        className="max-w-7xl mx-auto bg-dark dark:bg-black rounded-3xl md:rounded-[3rem] p-6 md:p-20 text-white flex flex-col md:flex-row items-center gap-12 md:gap-16 relative z-10 shadow-2xl transition-colors"
       >
-        <div className="md:w-3/5">
-          <h2 ref={headingRef} className="text-4xl md:text-6xl font-bold leading-tight uppercase text-white">
+        <div className="md:w-3/5 text-center md:text-left">
+          <h2 ref={headingRef} className="text-3xl md:text-6xl font-bold leading-tight uppercase text-white">
             Let's work together and create something extraordinary!
           </h2>
         </div>
         
         <div ref={formRef} className="md:w-2/5 w-full">
-          <div className="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] relative overflow-hidden group backdrop-blur-sm">
+          <div className="bg-white/5 border border-white/10 p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group backdrop-blur-sm">
             {/* Soft inner glow on hover */}
             <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
