@@ -129,7 +129,7 @@ export default function About() {
             </p>
 
             <div className="mb-12 flex justify-center md:justify-start">
-              <Link href="#contact" data-cursor="hover">
+              <Link href="https://www.facebook.com/SayedHasanDipto25" data-cursor="hover">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
