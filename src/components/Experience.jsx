@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import Link from "next/link";
+
 export default function Experience() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
@@ -75,7 +77,7 @@ export default function Experience() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 relative bg-[#050505] transition-colors" data-purpose="education-and-experience">
+    <section id="experience" ref={sectionRef} className="py-24 px-6 relative bg-transparent transition-colors" data-purpose="education-and-experience">
       {/* Animated SVG Path */}
       <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[2px] -z-10 hidden md:block">
         <svg width="2" height="100%" viewBox="0 0 2 1000" fill="none" preserveAspectRatio="none" className="h-full w-full">
@@ -100,7 +102,7 @@ export default function Experience() {
           Education &amp; Experience
         </h2>
 
-        <div ref={colsRef} className="grid md:grid-cols-3 gap-12">
+        <div ref={colsRef} className="grid md:grid-cols-3 gap-12 mb-16">
           {data.map((col, index) => (
             <div key={index} className="flex flex-col relative">
               <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-6 bg-[#050505] pr-4 self-start relative z-10 transition-colors">
@@ -108,21 +110,34 @@ export default function Experience() {
               </span>
               <div className="space-y-8 relative">
                 {col.items.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ x: 10 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="relative cursor-default group pl-4 border-l-2 border-transparent hover:border-brand transition-all"
-                  >
-                    <h4 className="font-semibold text-lg mb-1 group-hover:text-brand transition-colors text-white">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-gray-400">{item.subtitle}</p>
-                  </motion.div>
+                  <Link key={i} href="/experience" className="block">
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="relative cursor-pointer group pl-4 border-l-2 border-transparent hover:border-brand transition-all"
+                    >
+                      <h4 className="font-semibold text-lg mb-1 group-hover:text-brand transition-colors text-white">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-gray-400">{item.subtitle}</p>
+                    </motion.div>
+                  </Link>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <Link href="/experience">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-xs uppercase tracking-widest border border-white/20 px-8 py-3 rounded-full hover:border-brand hover:text-brand transition-all text-white"
+            >
+              Explore Detailed Career History →
+            </motion.button>
+          </Link>
         </div>
       </motion.div>
     </section>

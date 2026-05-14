@@ -13,7 +13,7 @@ export default function NotFound() {
         <motion.h1 
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "power4.out" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-[12rem] md:text-[20rem] font-bold text-white/5 leading-none select-none"
         >
           404

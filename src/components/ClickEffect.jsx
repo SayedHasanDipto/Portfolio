@@ -4,29 +4,41 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ClickEffect() {
-  const [clicks, setClicks] = useState([]);
+  const [particles, setParticles] = useState([]);
+  const [ripples, setRipples] = useState([]);
 
   useEffect(() => {
     const handlePointerDown = (e) => {
       const clickId = Date.now();
 
-      // Optimized: 8 blocks instead of 12
-      const blocks = Array.from({ length: 8 }).map((_, i) => ({
-        id: `${clickId}-${i}`,
+      // 1. Elegant Water Ripple
+      const newRipple = {
+        id: `ripple-${clickId}`,
         x: e.clientX,
         y: e.clientY,
-        size: Math.random() * 12 + 8,
-        vx: (Math.random() - 0.5) * 180,
-        vy: (Math.random() - 0.5) * 180,
-        rotation: Math.random() * 360,
+      };
+      setRipples((prev) => [...prev, newRipple]);
+
+      // 2. Premium Neon Sparkles (Replacing Minecraft)
+      const sparks = Array.from({ length: 12 }).map((_, i) => ({
+        id: `spark-${clickId}-${i}`,
+        x: e.clientX,
+        y: e.clientY,
+        size: Math.random() * 6 + 2,
+        vx: (Math.random() - 0.5) * 300,
+        vy: (Math.random() - 0.5) * 300,
+        delay: Math.random() * 0.1,
       }));
+      setParticles((prev) => [...prev, ...sparks]);
 
-      setClicks((prev) => [...prev, ...blocks]);
-
-      // Faster cleanup: 800ms
+      // Cleanup
       setTimeout(() => {
-        setClicks((prev) => prev.filter(p => !blocks.find(nb => nb.id === p.id)));
-      }, 800);
+        setRipples((prev) => prev.filter(r => r.id !== newRipple.id));
+      }, 1000);
+
+      setTimeout(() => {
+        setParticles((prev) => prev.filter(p => !sparks.find(ns => ns.id === p.id)));
+      }, 1500);
     };
 
     window.addEventListener("pointerdown", handlePointerDown);
@@ -36,32 +48,59 @@ export default function ClickEffect() {
   return (
     <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
       <AnimatePresence>
-        {clicks.map((b) => (
+        {/* Elegant Ripple */}
+        {ripples.map((r) => (
           <motion.div
-            key={b.id}
+            key={r.id}
             initial={{
-              x: b.x,
-              y: b.y,
-              rotate: 0,
-              opacity: 1,
-              scale: 1
+              x: r.x,
+              y: r.y,
+              scale: 0,
+              opacity: 0.6,
+              translateX: "-50%",
+              translateY: "-50%"
             }}
             animate={{
-              x: b.x + b.vx,
-              y: b.y + b.vy + 100, // Add "gravity" pull
-              rotate: b.rotation,
+              scale: 5,
               opacity: 0,
-              scale: 0.2,
+              borderWidth: "1px"
             }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute w-12 h-12 border-[3px] border-brand rounded-full shadow-[0_0_20px_rgba(217,255,0,0.3)]"
+          />
+        ))}
+
+        {/* Premium Neon Sparkles */}
+        {particles.map((s) => (
+          <motion.div
+            key={s.id}
+            initial={{
+              x: s.x,
+              y: s.y,
+              opacity: 1,
+              scale: 1,
+              translateX: "-50%",
+              translateY: "-50%"
+            }}
+            animate={{
+              x: s.x + s.vx,
+              y: s.y + s.vy,
+              opacity: 0,
+              scale: 0,
+            }}
+            transition={{
+              duration: 1 + Math.random(),
+              ease: [0.22, 1, 0.36, 1],
+              delay: s.delay
+            }}
             style={{
               position: "absolute",
-              width: b.size,
-              height: b.size,
+              width: s.size,
+              height: s.size,
               backgroundColor: "#D9FF00",
-              boxShadow: "2px 2px 0px rgba(0,0,0,0.2)", // Minecraft-like shadow
-              borderRadius: "0px", // Strict squares
-              willChange: "transform, opacity",
+              borderRadius: "50%",
+              filter: "blur(1px)",
+              boxShadow: "0 0 10px #D9FF00, 0 0 20px #D9FF00",
             }}
           />
         ))}

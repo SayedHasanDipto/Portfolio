@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import Profile from "@/components/Profile"; // This is the Bento Grid version
 import Partners from "@/components/Partners";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
@@ -36,7 +36,7 @@ export default function Home() {
           <Header />
           <main className="pt-20">
             <Hero />
-            <About />
+            <Profile /> 
             <Stats />
             <Partners />
             <Experience />

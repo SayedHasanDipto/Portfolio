@@ -85,7 +85,7 @@ export default function About() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-[#050505] transition-colors relative z-20" data-purpose="intro-content">
+    <section id="about" ref={sectionRef} className="py-24 px-6 bg-transparent transition-colors relative z-20" data-purpose="intro-content">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

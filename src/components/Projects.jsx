@@ -6,8 +6,10 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from "fram
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Projects() {
+  const router = useRouter();
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const cardsRef = useRef(null);
@@ -82,6 +84,7 @@ export default function Projects() {
 }
 
 function ProjectCard({ project }) {
+  const router = useRouter();
   const cardRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -122,7 +125,7 @@ function ProjectCard({ project }) {
   };
 
   return (
-    <Link href={`/projects/${project.slug}`}>
+    <div onClick={() => router.push(`/projects/${project.slug}`)}>
       <motion.div 
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -170,6 +173,6 @@ function ProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
-    </Link>
+    </div>
   );
 }

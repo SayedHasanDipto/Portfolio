@@ -17,6 +17,7 @@ import ProjectCard from "@/components/Projects"; // Wait, Projects.jsx exports t
 // Duplicating it for now to ensure I can customize it for the full page view.
 
 function IndividualProjectCard({ project }) {
+  const router = useRouter();
   const cardRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -57,7 +58,7 @@ function IndividualProjectCard({ project }) {
   };
 
   return (
-    <Link href={`/projects/${project.slug}`}>
+    <div onClick={() => router.push(`/projects/${project.slug}`)}>
       <motion.div 
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -107,7 +108,7 @@ function IndividualProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
-    </Link>
+    </div>
   );
 }
 
