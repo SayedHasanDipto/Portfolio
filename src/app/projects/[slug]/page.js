@@ -15,7 +15,12 @@ import { FaArrowLeft, FaExternalLinkAlt, FaTools, FaLightbulb, FaExclamationTria
 export default function ProjectDetail() {
   const { slug } = useParams();
   const router = useRouter();
-  const project = projects.find((p) => p.slug === slug);
+  
+  const projectIndex = projects.findIndex((p) => p.slug === slug);
+  const project = projects[projectIndex];
+  
+  const nextProject = projects[(projectIndex + 1) % projects.length];
+
   const [isLoading, setIsLoading] = useState(true);
   const containerRef = useRef(null);
 
@@ -52,15 +57,13 @@ export default function ProjectDetail() {
             {/* Elegant Header Section */}
             <section className="pt-32 md:pt-40 pb-16 px-6">
               <div className="max-w-7xl mx-auto">
-                <motion.button
-                  onClick={() => router.back()}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                <Link
+                  href="/projects"
                   className="group flex items-center gap-3 text-white/30 hover:text-brand transition-all mb-12 uppercase text-[10px] font-bold tracking-[0.5em]"
                 >
                   <span className="w-8 h-[1px] bg-white/20 group-hover:w-12 group-hover:bg-brand transition-all" />
                   Return to Archive
-                </motion.button>
+                </Link>
 
                 <div className="grid lg:grid-cols-12 gap-12 items-end">
                   <div className="lg:col-span-8">
@@ -126,7 +129,7 @@ export default function ProjectDetail() {
                   whileInView={{ opacity: 1, x: 0 }}
                   className="absolute bottom-12 right-12 hidden md:block p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl"
                 >
-                  <div className="flex gap-12">
+                  <div className="flex gap-12 items-center">
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-brand mb-2 font-black">Timeline</p>
                       <p className="text-sm font-bold">2024 Series</p>
@@ -135,9 +138,18 @@ export default function ProjectDetail() {
                       <p className="text-[10px] uppercase tracking-widest text-brand mb-2 font-black">Services</p>
                       <p className="text-sm font-bold">{project.category}</p>
                     </div>
-                    <Link href="#" className="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-dark hover:scale-110 transition-transform">
-                      <FaExternalLinkAlt size={12} />
-                    </Link>
+                    <div className="flex gap-3">
+                      {project.liveLink && (
+                        <Link href={project.liveLink} target="_blank" className="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-dark hover:scale-110 transition-transform">
+                          <FaExternalLinkAlt size={12} title="Live View" />
+                        </Link>
+                      )}
+                      {project.githubLink && (
+                        <Link href={project.githubLink} target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                          <FaAsterisk size={12} title="Source Code" />
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -228,7 +240,7 @@ export default function ProjectDetail() {
             {/* Footer Navigation */}
             <section className="py-24 px-6 border-t border-white/5 bg-brand text-dark overflow-hidden relative group">
               <div className="absolute inset-0 bg-dark opacity-0 group-hover:opacity-5 transition-opacity" />
-              <Link href="/#projects" className="flex flex-col items-center gap-8 group">
+              <Link href={`/projects/${nextProject.slug}`} className="flex flex-col items-center gap-8 group">
                 <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.8em] italic">
                   <FaAsterisk className="animate-spin-slow" />
                   The Journey Continues
@@ -249,3 +261,4 @@ export default function ProjectDetail() {
     </>
   );
 }
+

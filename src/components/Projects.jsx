@@ -125,7 +125,7 @@ function ProjectCard({ project }) {
   };
 
   return (
-    <div onClick={() => router.push(`/projects/${project.slug}`)}>
+    <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -173,6 +173,7 @@ function ProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
-    </div>
+    </Link>
   );
 }
+

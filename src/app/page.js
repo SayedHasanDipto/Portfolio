@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
 import Header from "@/components/Header";
@@ -21,8 +21,21 @@ import PageWrapper from "@/components/PageWrapper";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    if (!isLoading && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [isLoading]);
+
   return (
     <>
+
       <FluidBackground />
       
       <AnimatePresence mode="wait">

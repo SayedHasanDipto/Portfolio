@@ -9,7 +9,9 @@ export const projects = [
     fullDescription: "A comprehensive real-time communication platform built for modern teams. Focused on minimal latency and intuitive message organization.",
     challenge: "Developing a real-time messaging system that remains responsive under heavy load while maintaining a clean, distraction-free interface.",
     solution: "Implemented WebSocket integration with a redundant backend architecture and a highly optimized React frontend using specialized state management.",
-    tools: ["React", "Socket.io", "Tailwind CSS", "Node.js"]
+    tools: ["React", "Socket.io", "Tailwind CSS", "Node.js"],
+    liveLink: "https://github.com/sayedhasandipto",
+    githubLink: "https://github.com/sayedhasandipto"
   },
   {
     id: 2,
@@ -21,7 +23,9 @@ export const projects = [
     fullDescription: "A productivity powerhouse that helps users stay organized with smart task prioritization and collaborative features.",
     challenge: "Creating a task management system that balances power-user features with a low barrier to entry for casual users.",
     solution: "Designed a modular dashboard where users can customize their workflow, integrated with drag-and-drop functionality and smart deadline notifications.",
-    tools: ["Next.js", "MongoDB", "Framer Motion", "TypeScript"]
+    tools: ["Next.js", "MongoDB", "Framer Motion", "TypeScript"],
+    liveLink: "https://github.com/sayedhasandipto",
+    githubLink: "https://github.com/sayedhasandipto"
   },
   {
     id: 3,
@@ -33,7 +37,9 @@ export const projects = [
     fullDescription: "A cutting-edge platform for buying, selling, and managing digital assets on the blockchain.",
     challenge: "Handling complex blockchain transactions while providing a smooth, high-end visual experience that builds user trust.",
     solution: "Used Ethers.js for secure wallet integration and custom WebGL shaders for premium visual effects, ensuring the UI felt as valuable as the assets being traded.",
-    tools: ["Ethereum", "React", "Three.js", "Solidity"]
+    tools: ["Ethereum", "React", "Three.js", "Solidity"],
+    liveLink: "https://github.com/sayedhasandipto",
+    githubLink: "https://github.com/sayedhasandipto"
   },
   {
     id: 4,
@@ -45,7 +51,9 @@ export const projects = [
     fullDescription: "An application designed to help individuals track and reduce their carbon footprint through daily habits and challenges.",
     challenge: "Gamifying sustainability data to keep users engaged without overwhelming them with negative environmental statistics.",
     solution: "Developed a reward-based system with interactive charts and social sharing features that celebrate positive environmental impact.",
-    tools: ["React Native", "Firebase", "Victory Charts", "Expo"]
+    tools: ["React Native", "Firebase", "Victory Charts", "Expo"],
+    liveLink: "https://github.com/sayedhasandipto",
+    githubLink: "https://github.com/sayedhasandipto"
   },
   {
     id: 5,
@@ -57,7 +65,9 @@ export const projects = [
     fullDescription: "Real-time analytics and tracking for cryptocurrency portfolios across multiple exchanges and wallets.",
     challenge: "Integrating with multiple diverse APIs to provide a unified, real-time view of asset performance and history.",
     solution: "Built a robust Node.js backend using Redis for caching and a high-frequency polling system to ensure data accuracy with minimal latency.",
-    tools: ["Node.js", "Redis", "Chart.js", "Exchange APIs"]
+    tools: ["Node.js", "Redis", "Chart.js", "Exchange APIs"],
+    liveLink: "https://github.com/sayedhasandipto",
+    githubLink: "https://github.com/sayedhasandipto"
   },
   {
     id: 6,
@@ -69,6 +79,9 @@ export const projects = [
     fullDescription: "A high-end visual portfolio for an interior design studio, focusing on immersive imagery and storytelling.",
     challenge: "Delivering a large number of high-resolution images without compromising page load speeds or user experience.",
     solution: "Leveraged Next.js Image optimization and custom lazy-loading sequences to create a gallery that feels instant and fluid.",
-    tools: ["Next.js", "GSAP", "Sanity CMS", "Framer Motion"]
+    tools: ["Next.js", "GSAP", "Sanity CMS", "Framer Motion"],
+    liveLink: "https://github.com/sayedhasandipto",
+    githubLink: "https://github.com/sayedhasandipto"
   }
 ];
+

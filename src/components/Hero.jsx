@@ -143,21 +143,26 @@ export default function Hero() {
               </Link>
 
               <div className="flex gap-4">
-                {["Instagram", "LinkedIn", "Behance"].map((social, i) => (
+                {[
+                  { name: "Instagram", href: "https://www.instagram.com/sayedhasandipto/" },
+                  { name: "LinkedIn", href: "https://www.linkedin.com/in/sayedhasandipto/" },
+                  { name: "Behance", href: "https://www.behance.net/sayedhasandipto" }
+                ].map((social, i) => (
                   <motion.a
-                    key={social}
+                    key={social.name}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 + i * 0.1 }}
                     className="text-[10px] font-bold uppercase tracking-widest border-b border-white pb-1 hover:text-brand transition-colors text-white"
-                    href="https://www.linkedin.com/in/sayedhasandipto/"
+                    href={social.href}
                     target="_blank"
                     data-cursor="hover"
                   >
-                    {social}
+                    {social.name}
                   </motion.a>
                 ))}
               </div>
+
             </div>
           </div>
 

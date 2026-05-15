@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Sayed Hasan Dipto | Full-Stack Developer & UI/UX Designer",
+  title: "Sayed Hasan Dipto | MERN Stack Developer & UI/UX Designer",
   description: "Specialized in building high-performance Next.js applications with premium animations and intuitive user experiences.",
   keywords: ["Next.js", "React", "Full-Stack Developer", "UI/UX Designer", "MERN Stack", "GSAP Animations"],
   authors: [{ name: "Sayed Hasan Dipto" }],
@@ -38,7 +38,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Sayed Hasan Dipto | Portfolio",
-    description: "Creative Full-Stack Developer specialized in the modern web ecosystem.",
+    description: "Creative MEARN Stack Developer specialized in the modern web ecosystem.",
     url: "https://sayedhasandipto.vercel.app",
     siteName: "Sayed Hasan Dipto Portfolio",
     images: [
@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
             {children}
           </SmoothScroll>
         </div>
-        
+
         {/* JSON-LD Structured Data for Google SEO */}
         <script
           type="application/ld+json"

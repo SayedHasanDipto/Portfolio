@@ -10,14 +10,10 @@ import FluidBackground from "@/components/FluidBackground";
 import Preloader from "@/components/Preloader";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import PageWrapper from "@/components/PageWrapper";
-import ProjectCard from "@/components/Projects"; // Wait, Projects.jsx exports the section, not the card. 
-
-// I should probably export ProjectCard from Projects.jsx or duplicate it here.
-// Duplicating it for now to ensure I can customize it for the full page view.
 
 function IndividualProjectCard({ project }) {
-  const router = useRouter();
   const cardRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -58,7 +54,7 @@ function IndividualProjectCard({ project }) {
   };
 
   return (
-    <div onClick={() => router.push(`/projects/${project.slug}`)}>
+    <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -108,7 +104,7 @@ function IndividualProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
-    </div>
+    </Link>
   );
 }
 
@@ -173,3 +169,4 @@ export default function ProjectsPage() {
     </>
   );
 }
+

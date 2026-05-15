@@ -85,7 +85,7 @@ export default function Header() {
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             className="relative hidden sm:block"
           >
-            <Link href="https://www.linkedin.com/in/sayedhasandipto/" target="_blank" data-cursor="hover">
+            <Link href="/#contact" data-cursor="hover">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -94,6 +94,7 @@ export default function Header() {
                 Get In Touch
               </motion.div>
             </Link>
+
           </motion.div>
 
           {/* Mobile Menu Toggle */}
