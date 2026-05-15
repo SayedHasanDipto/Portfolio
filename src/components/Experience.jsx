@@ -71,7 +71,7 @@ export default function Experience() {
       period: "2025 – Present",
       items: [
         { title: "Junior MERN stack Developer", subtitle: "Upwork & Fiverr" },
-        { title: "Full-Stack Web Development", subtitle: "Full-Stack Web Development" },
+        { title: "Full-Stack Web Development", subtitle: "Building Modern Web Ecosystems" },
       ]
     }
   ];

@@ -79,8 +79,9 @@ export default function Profile() {
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                I am a specialized **MERN Stack Developer** with a passion for architecting scalable, high-performance web applications. By leveraging the power of MongoDB, Express.js, React, and Node.js, I build seamless end-to-end solutions that combine technical robustness with premium user experiences.
+                I am a specialized <span className="text-white font-bold">MERN Stack Developer</span> with a passion for architecting scalable, high-performance web applications. By leveraging the power of MongoDB, Express.js, React, and Node.js, I build seamless end-to-end solutions that combine technical robustness with premium user experiences.
               </p>
+
 
             </div>
             <div className="flex flex-wrap gap-3">
