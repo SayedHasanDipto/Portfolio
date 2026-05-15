@@ -75,12 +75,13 @@ export default function Profile() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Sayed Hasan Dipto</h3>
-                  <p className="text-gray-500 text-sm">Full-Stack Web Developer</p>
+                  <p className="text-gray-500 text-sm">Expert MERN Stack Developer</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                I am a passionate developer with a deep interest in crafting high-performance, visually stunning web experiences. With a background in MERN stack development and a keen eye for design, I bridge the gap between technical complexity and user-centric aesthetics.
+                I am a specialized **MERN Stack Developer** with a passion for architecting scalable, high-performance web applications. By leveraging the power of MongoDB, Express.js, React, and Node.js, I build seamless end-to-end solutions that combine technical robustness with premium user experiences.
               </p>
+
             </div>
             <div className="flex flex-wrap gap-3">
               <span className="bg-white/5 text-white/70 text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-white/10 group-hover:border-brand/30 transition-colors">Creative Design</span>

@@ -38,7 +38,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Sayed Hasan Dipto | Portfolio",
-    description: "Creative MEARN Stack Developer specialized in the modern web ecosystem.",
+    description: "Creative MERN Stack Developer specialized in the modern web ecosystem.",
     url: "https://sayedhasandipto.vercel.app",
     siteName: "Sayed Hasan Dipto Portfolio",
     images: [
@@ -54,7 +54,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sayed Hasan Dipto | Portfolio",
-    description: "Creative Full-Stack Developer specialized in the modern web ecosystem.",
+    description: "Creative MERN Stack Developer specialized in the modern web ecosystem.",
     images: ["https://i.ibb.co/wZVXT6Yd/m1.png"],
   },
 };
@@ -84,8 +84,8 @@ export default function RootLayout({ children }) {
               "@type": "Person",
               "name": "Sayed Hasan Dipto",
               "url": "https://sayedhasandipto.com",
-              "jobTitle": "Full-Stack Web Developer",
-              "description": "Specialized in building high-performance Next.js applications with premium animations and intuitive user experiences.",
+              "jobTitle": "MERN Stack Developer",
+              "description": "Specialized in building high-performance MERN stack applications with premium animations and intuitive user experiences.",
               "sameAs": [
                 "https://www.linkedin.com/in/sayedhasandipto/",
                 "https://github.com/sayedhasandipto"
@@ -93,6 +93,7 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+
       </body>
     </html>
   );

@@ -34,11 +34,12 @@ export default function Footer() {
     {
       title: "Services",
       links: [
-        { name: "Frontend Development", href: "/#projects" },
-        { name: "MERN Stack", href: "/#about" },
-        { name: "UI/UX Design", href: "/#about" },
-        { name: "Optimization", href: "/#projects" }
+        { name: "Full-Stack MERN Apps", href: "/#projects" },
+        { name: "Node.js Backend Systems", href: "/#about" },
+        { name: "React Frontend Logic", href: "/#about" },
+        { name: "MongoDB Database Design", href: "/#projects" }
       ]
+
     },
   ];
 
