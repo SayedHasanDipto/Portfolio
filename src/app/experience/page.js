@@ -157,7 +157,7 @@ export default function ExperiencePage() {
       {!isLoading && (
         <PageWrapper>
           <Header />
-          <main className="pt-24 md:pt-32 pb-24 px-4 md:px-6 min-h-screen overflow-hidden">
+          <main className="pt-24 md:pt-32 pb-24 px-4 md:px-6 min-h-screen overflow-hidden dot-grid">
             <div className="max-w-7xl mx-auto" ref={containerRef}>
               {/* Hero Section */}
               <div className="text-center mb-24">

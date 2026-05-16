@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 const steps = [
   {
     number: "01",
@@ -27,7 +29,9 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 px-6 bg-[#050505]">
+    <section className="py-24 px-6 bg-[#050505] relative overflow-hidden">
+      <InteractiveDotGrid />
+
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <p className="text-brand text-xs uppercase tracking-[0.3em] font-bold mb-4">My Workflow</p>

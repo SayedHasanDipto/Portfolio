@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
@@ -58,7 +60,10 @@ export default function Projects() {
 
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-black/20 transition-colors" id="projects" data-purpose="latest-projects">
+    <section ref={sectionRef} className="py-24 px-6 bg-[#050505] transition-colors relative overflow-hidden" id="projects" data-purpose="latest-projects">
+
+      <InteractiveDotGrid />
+
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-12">
           <div className="overflow-hidden">

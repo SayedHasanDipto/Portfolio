@@ -6,6 +6,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 export default function About() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -85,7 +87,9 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 px-6 bg-transparent transition-colors relative z-20" data-purpose="intro-content">
+    <section id="about" ref={sectionRef} className="py-24 px-6 bg-[#050505] transition-colors relative overflow-hidden" data-purpose="intro-content">
+      <InteractiveDotGrid />
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

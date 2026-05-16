@@ -2,6 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 
 function Counter({ value, duration = 2 }) {
   const [count, setCount] = useState(0);
@@ -40,6 +42,8 @@ export default function Stats() {
 
   return (
     <section className="py-24 bg-[#050505] border-y border-white/5 relative overflow-hidden">
+      <InteractiveDotGrid />
+
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-6">
           {stats.map((stat, index) => (

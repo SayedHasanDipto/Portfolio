@@ -145,7 +145,7 @@ export default function ProjectsPage() {
       {!isLoading && (
         <PageWrapper>
           <Header />
-          <main className="pt-24 md:pt-32 pb-24 px-4 md:px-6 min-h-screen">
+          <main className="pt-24 md:pt-32 pb-24 px-4 md:px-6 min-h-screen dot-grid">
             <div className="max-w-7xl mx-auto" ref={containerRef}>
               <div className="mb-12 md:mb-20 overflow-hidden text-center">
                 <p className="text-brand text-xs uppercase tracking-[0.3em] font-bold mb-4">Portfolio</p>

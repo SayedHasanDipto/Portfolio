@@ -30,10 +30,17 @@ export default function Preloader({ onComplete }) {
   return (
     <motion.div
       initial={{ y: "0%" }}
-      exit={{ y: "-100%" }}
-      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+      exit={{ 
+        y: "-100%",
+        rotateX: -30,
+        scale: 0.9,
+        opacity: 0
+      }}
+      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+      style={{ perspective: "1000px" }}
       className="fixed inset-0 z-[200] bg-dark text-white flex flex-col items-center justify-center pointer-events-none"
     >
+
       <div className="overflow-hidden">
         <motion.div
           initial={{ y: 150 }}

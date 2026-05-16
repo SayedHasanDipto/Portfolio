@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 
 const testimonials = [
   {
@@ -34,6 +35,8 @@ export default function Testimonials() {
 
   return (
     <section className="py-24 px-6 relative bg-[#050505] overflow-hidden">
+      <InteractiveDotGrid />
+
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0 }}

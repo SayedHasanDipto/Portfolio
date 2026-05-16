@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 
 export default function Contact() {
   const sectionRef = useRef(null);
@@ -96,6 +98,8 @@ export default function Contact() {
 
   return (
     <section ref={sectionRef} className="p-4 md:p-12 relative overflow-hidden bg-transparent transition-colors" id="contact">
+      <InteractiveDotGrid />
+
       {/* Animated Light Sweep Background */}
       <div className="absolute inset-0 z-0 bg-transparent transition-colors">
         <motion.div

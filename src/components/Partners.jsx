@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 
 export default function Partners() {
   const partners = [
@@ -9,7 +11,10 @@ export default function Partners() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50/50 dark:bg-white/5 overflow-hidden border-y border-gray-100 dark:border-white/10 transition-colors" data-purpose="trusted-partners">
+    <section className="py-20 bg-[#050505] overflow-hidden border-y border-white/5 transition-colors relative" data-purpose="trusted-partners">
+
+      <InteractiveDotGrid />
+
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <h3 className="text-center font-serif text-3xl italic text-gray-600 dark:text-gray-400">
           Skill&apos;s I&apos;ve Mastered

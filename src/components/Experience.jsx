@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Link from "next/link";
+import InteractiveDotGrid from "./InteractiveDotGrid";
+
 
 export default function Experience() {
   const sectionRef = useRef(null);
@@ -77,7 +79,10 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 px-6 relative bg-transparent transition-colors" data-purpose="education-and-experience">
+    <section id="experience" ref={sectionRef} className="py-24 px-6 relative overflow-hidden bg-[#050505] transition-colors" data-purpose="education-and-experience">
+
+      <InteractiveDotGrid />
+
       {/* Animated SVG Path */}
       <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[2px] -z-10 hidden md:block">
         <svg width="2" height="100%" viewBox="0 0 2 1000" fill="none" preserveAspectRatio="none" className="h-full w-full">
